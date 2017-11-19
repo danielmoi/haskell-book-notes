@@ -227,6 +227,7 @@ y = 4
 ```
 
 ## 2.8 Arithmetic functions
+```
 +     plus        addition
 -     minus       subtraction
 *     asterisk    multiplication
@@ -235,6 +236,7 @@ div   divide      integral division
 mod   modulo      like rem, but after modular division
 quot  quotient    integral division, round down
 rem   remainder   remainder after division
+```
 
 
 Integral division = division with integers, returns integers as results
