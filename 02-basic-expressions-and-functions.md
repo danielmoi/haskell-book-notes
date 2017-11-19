@@ -183,12 +183,9 @@ half :: Fractional a => a -> a 	-- Defined at 02-exercises.hs:2:1
 ```
 
 `infixl` means:
-- it is an infix operator
-- left associative
-
-7 is the PRECEDENCE; higher is applied first (scale of 0-9)
-
-* is the function NAME
+- it is an infix operator (left associative)
+- 7 is the PRECEDENCE; higher is applied first (scale of 0-9)
+- `*` is the function NAME
 
 ---
 ```
