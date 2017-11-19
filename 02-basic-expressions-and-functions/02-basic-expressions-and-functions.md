@@ -295,4 +295,50 @@ let x = 5; y = 6 in x * y
 -- 30
 ```
 
+## 2.12 Definitions
+1. Argument and Parameter
+Parameters represent the value that WILL be passed to the function WHEN the
+function is called. Therefore, parameters are usually variables.
+An argument is an input VALUE the function IS applied to.
+However, arguments can be variables or expressions that include variables, thus
+the distinction is NOT always clear.
+
+2. Expression
+An expression is a combination of symbols that conforms to syntactic rules and
+can be EVALUATED to some RESULT.
+While irreducible constants are technically expressions, these will be referred
+to as VALUES. So when "expression" is used, it refers to REDUCIBLE EXPRESSION
+
+3. Redex
+A reducible expression.
+
+4. Value
+An expression that cannot be reduced or evaluated any further.
+`2 * 2` is an expression, and evaluates to `4`, a value.
+
+```
+EXPRESSION -->  VALUE
+REDEX
+REDUCIBLE       IRREDUCIBLE
+```
+5. Function
+A mathematical object whose capabilities are limited to being applied to an
+ARGUMENT and returning a RESULT.
+Functions can be described as a LIST of ORDERED PAIRS (of their inputs and
+outputs), like a mapping.
+Given the function `f x = x + 2`, applied to the argument `2`, we would have the
+ordered pair `(2, 4)` of its input and output
+
+6. Infix notation
+The style used in arithmetic and logic.
+Infix = the operator is placed BETWEEN the OPERANDS / ARGUMENTS.
+Example: the plus sign in the expression `2 + 2`
+
+7. Operators
+Functions that are infix by default
+In Haskell, operators must use symbols and not alphanumeric characters
+
+8. Syntactic sugar
+Syntax that makes expressions easier to read and write.
+
 
