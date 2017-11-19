@@ -90,7 +90,9 @@ Abstraction:
     - another expression
 
 A simple function:
+```
 λx.x
+```
 
 This lambda abstraction has no name.
 It is an ANONYMOUS function.
@@ -98,10 +100,14 @@ It is an ANONYMOUS function.
 --------------------------------------------------------------------------------
 LAMBDA ABSTRACTION = ANONYMOUS FUNCTION
 Usual notation:
+```
 λx → x²
+```
 
 Another common, equivalent notation:
+```
 λx.x²
+```
 
 In Haskell source code, the Greek lambda is replaced by a backslash character \
 This is because it is easier to type, and requires only the basic 7-bit ASCII
@@ -109,7 +115,9 @@ character set.
 Similarly, the arrow is replaced with the ASCII character sequence '->'
 
 So, the lambda abstraction above would be written in Haskell as:
+```
 \x -> x * x
+```
 
 There is actually a whole mathematical theory devoted to expressing computation
 entirely using lambda abstractions: the lambda calculus.
@@ -117,7 +125,9 @@ entirely using lambda abstractions: the lambda calculus.
 Most function programming languages are based upon some extension of this idea.
 
 When a lambda abstraction is APPLIED to a VALUE:
+```
 (\x -> x * x) 7
+```
 
 The result of the expression is determined by replacing every FREE OCCURRENCE o
 the PARAMETER VARIABLE (in this case x) with the PARAMETER VALUE (in this case
@@ -128,12 +138,14 @@ the PARAMETER VARIABLE (in this case x) with the PARAMETER VALUE (in this case
 A named function can be called by name by another funciton.
 An anonymous function cannot.
 
+```
 λ x . x
 |---|
 HEAD
 
     |----|
      BODY
+```
 
 The dot (.) separates the PARAMETERS of the lambda from the function BODY
 
@@ -145,8 +157,10 @@ It abstracts through the introduction of names.
 
 ## Alpha equivalence
 The variable x is not semantically meaningful.
+```
 \x -> x
 \d -> d
+```
 These all mean the same thing.
 They are all the same function.
 
@@ -161,15 +175,19 @@ This is because its only purpose was to bind a variable.
 This PROCESS is called beta reduction.
 
 This function:
+```
 \x -> x
+```
 
 We'll do our first beta reduction using a number.
 We apply the function to 2,
 substitute 2 for each bound variable in the body of the function,
 and eliminate the head:
 
+```
 (λx.x) 2
        2
+```
 
 The only bound variable is the single x,
 so apply this function to 2, returns 2
@@ -185,6 +203,7 @@ ie. we are not applying the function to the 1:
 Eliminating the head TELLS US that the function has BEEN APPLIED.
 
 ----
+```
 (λx.x)(λy.y)
 [x:=(λy.y)]
       λy.y
@@ -195,25 +214,32 @@ Eliminating the head TELLS US that the function has BEEN APPLIED.
       The [x:=z] syntax
       Indicates that z will be substituted for all occurrences of x
       (here, z is the function λy.y)
+```
 
 ----
 Once more, but this time we'll add another argument
 
+```
 (λx.x)(λy.y)z
+```
 
 Applications in the lambda calculus are LEFT ASSOCIATIVE
 This means that unless specific parentheses suggest otherwise,
 they associate (group) to the left
 
 So:
+```
 (λx.x)(λy.y)z
+```
 
 Is the same as:
+```
 ((λx.x)(λy.y))z
 [x:=(λy.y)]
 (λy.y)z
 [y:=z]
 z
+```
 
 We can't reduce this any further as there is nothing left to apply.
 The process of beta reduction stops when there are either
@@ -239,10 +265,12 @@ When we apply this function to an argument, nothing can be done with the y.
 It remains irreducible.
 
 ---
+```
 (λx.xy)z
 
 (λ[x:=z].xy)
 zy
+```
 
 NB. alpha equivalence does not apply to free variables.
 λx.xz is not equivalent to λx.xy
@@ -285,14 +313,18 @@ A combinator is a lambda term with no free variables.
 Combinators only serve to COMBINE the ARGUMENTS they are given.
 Every term in the BODY occurs in the HEAD
 
+```
 λx.x
 λxy.x
 λxyz.xz(yz)
+```
 
 
 These are not combinators:
+```
 λy.z
 λx.xz
+```
 
 ## 1.9 Divergence
 Divergence means that the reduction process never ends.
