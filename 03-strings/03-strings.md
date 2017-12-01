@@ -94,4 +94,29 @@ WRAPPED in this `IO` TYPE.
 Functions entered directly into the REPL will be wrapped by `GHCi`. It
 understands and implements `IO` without needing us to do that.
 
+----
+`do` is a special syntax that allows for SEQUENCING ACTIONS
 
+
+---
+## String concatenation
+
+## 3.4 Top-level versus local definitions
+`let` and `lwhere` clauses introduce LOCAL BINDINGS (or, declarations)
+
+## 3.5 Types of concatenation functions
+`++` is an INFIX operator.
+
+```
+++    has the type [a] -> [a] -> [a]
+concat    has the type [[a]] -> [a]
+```
+
+
+`concat` operates on lists.
+Because `String` is a list (a list of Char), concat can work on lists of string
+or lists of lists!
+
+
+## 3.6 Concatenation and scoping
+We can use parentheses to call ++ as a PREFIX, not infix, FUNCTION

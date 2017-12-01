@@ -8,6 +8,7 @@ main = do
   putStr ", three, and"
   putStrLn " four!"
 
+{- Ln means that it will start a NEW INE -}
 
 {-
 *Print2> main
